@@ -1,5 +1,4 @@
 import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
@@ -8,24 +7,20 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { NavLink } from "react-router-dom";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import galaxy from "../assets/img/19.jpg"
-
+import galaxy from "../assets/img/20.jpg";
+import "../styles/Inscription.css";
 
 function Copyright(props) {
   return (
     <Typography
       variant="body2"
-      color="text.secondary"
+      color="text.light"
       align="center"
-      {...props}
-    >
+      {...props}>
       {"Copyright © "}
       <Link
         color="inherit"
-        href="#"
-      >
+        href="#">
         Stars
       </Link>{" "}
       {new Date().getFullYear()}
@@ -55,7 +50,6 @@ const defaultTheme = createTheme({
 });
 
 export default function Inscription() {
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -63,50 +57,43 @@ export default function Inscription() {
       email: data.get("email"),
       password: data.get("password"),
     });
-
   };
-
 
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container
         component="main"
-        maxWidth="xs"
-      >
-
+        maxWidth="xs">
         <Box
+          className="inscription-box"
           sx={{
             marginTop: 8,
+            padding: 4,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-          }}
-        >
+          }}>
           {/* <img
             src={Logo}
             alt="Logo"
           /> */}
           <Typography
             component="h1"
-            variant="h5"
-          >
+            variant="h5">
             S'inscrire
           </Typography>
           <Box
             component="form"
             noValidate
             onSubmit={handleSubmit}
-            sx={{ mt: 3 }}
-          >
+            sx={{ mt: 3 }}>
             <Grid
               container
-              spacing={2}
-            >
+              spacing={2}>
               <Grid
                 item
                 xs={12}
-                sm={6}
-              >
+                sm={6}>
                 <TextField
                   autoComplete="given-name"
                   name="firstName"
@@ -120,8 +107,7 @@ export default function Inscription() {
               <Grid
                 item
                 xs={12}
-                sm={6}
-              >
+                sm={6}>
                 <TextField
                   required
                   fullWidth
@@ -129,13 +115,11 @@ export default function Inscription() {
                   label="Prenom"
                   name="lastName"
                   autoComplete="family-name"
-
                 />
               </Grid>
               <Grid
                 item
-                xs={12}
-              >
+                xs={12}>
                 <TextField
                   required
                   fullWidth
@@ -148,8 +132,7 @@ export default function Inscription() {
               </Grid>
               <Grid
                 item
-                xs={12}
-              >
+                xs={12}>
                 <TextField
                   required
                   fullWidth
@@ -161,8 +144,7 @@ export default function Inscription() {
               </Grid>
               <Grid
                 item
-                xs={12}
-              >
+                xs={12}>
                 <TextField
                   required
                   fullWidth
@@ -175,8 +157,7 @@ export default function Inscription() {
               </Grid>
               <Grid
                 item
-                xs={12}
-              >
+                xs={12}>
                 <TextField
                   required
                   fullWidth
@@ -187,27 +168,23 @@ export default function Inscription() {
                   autoComplete="confirm-password"
                 />
               </Grid>
-
             </Grid>
             <NavLink to="/">
               <Button
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
+                sx={{ mt: 3, mb: 2 }}>
                 Enregistrer
               </Button>
             </NavLink>
             <Grid
               container
-              justifyContent="flex-end"
-            >
+              justifyContent="flex-end">
               <Grid item>
                 <Link
                   href="/"
-                  variant="body2"
-                >
+                  variant="body2">
                   Avez-vous déjà un compte? connectez-vous avec!
                 </Link>
               </Grid>
