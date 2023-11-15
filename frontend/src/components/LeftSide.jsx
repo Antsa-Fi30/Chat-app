@@ -59,7 +59,7 @@ const LeftSide = () => {
         boxShadow
         shadow={theme.shadows[16]}
         className={"cardLeft"}
-        sx={{ borderRadius: 5, maxHeight: "98vh", overflowY: "scroll" }}>
+        sx={{ maxHeight: "98vh", overflowY: "scroll" }}>
         <Search />
         {/* Divider */}
         <Box sx={{ my: 2.5, borderTop: 2, borderColor: "#DDD" }}></Box>

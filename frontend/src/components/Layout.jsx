@@ -6,7 +6,6 @@ export default function Layout({ Component1, Component2 }) {
     <Box sx={{ flexGrow: 1 }}>
       <Grid
         container
-        spacing={1}
         columns={16}>
         <Grid xs={5}>{Component1}</Grid>
         <Grid xs={11}>{Component2}</Grid>
