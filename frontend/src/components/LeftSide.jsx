@@ -9,15 +9,12 @@ import {
 import { SearchRounded } from "@mui/icons-material";
 import Theme from "../Theme";
 import MainCard from "./MainCard";
-import { useTheme } from "@mui/material/styles";
 
 import { useEffect } from "react";
 import "./LeftSide.css";
 import UserList from "./UserList";
 
 const Search = () => {
-  useEffect(() => {}, []);
-
   const handleSearch = (event) => {
     const search = event.target.value;
     console.log(search);
@@ -50,16 +47,11 @@ const Search = () => {
 };
 
 const LeftSide = () => {
-  const theme = useTheme();
   return (
     <ThemeProvider theme={Theme}>
       <MainCard
         border={false}
-        elevation={16}
-        boxShadow
-        shadow={theme.shadows[16]}
-        className={"cardLeft"}
-        sx={{ maxHeight: "98vh", overflowY: "scroll" }}>
+        sx={{ maxHeighst: "98vh", overflowY: "scroll" }}>
         <Search />
         {/* Divider */}
         <Box sx={{ my: 2.5, borderTop: 2, borderColor: "#DDD" }}></Box>

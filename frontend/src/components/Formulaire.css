@@ -1,0 +1,11 @@
+.form-input {
+    display: flex;
+    flex-direction: row;
+}
+
+.text-area {
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    text-align: center;
+}

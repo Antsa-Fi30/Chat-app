@@ -1,39 +1,11 @@
-/* eslint-disable no-unused-vars */
+import { useState } from "react";
 
-import Link from "@mui/material/Link";
-import Typography from "@mui/material/Typography";
-import { ThemeProvider } from "@mui/material/styles";
-import Layout from "./Layout";
-import Theme from "../Theme";
-import LeftSide from "./LeftSide";
-import RightSide from "./RightSide";
+const Messages = () => {
+  const [isMine, setIsMine] = useState(false);
 
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}>
-      {"Copyright © "}
-      <Link
-        color="inherit"
-        href="#">
-        Stars
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+  const myMsg = "HEllo World";
 
-export default function Messages() {
-  return (
-    <ThemeProvider theme={Theme}>
-      <Layout
-        Component1={<LeftSide />}
-        Component2={<RightSide />}
-      />
-    </ThemeProvider>
-  );
-}
+  return <>{isMine ? <div>Gui</div> : <div>UIG</div>}</>;
+};
+
+export default Messages;

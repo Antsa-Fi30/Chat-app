@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Loader from "./components/Loader";
-import Messages from "./components/Messages";
+import Messenger from "./components/Messenger";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -12,7 +12,7 @@ const App = () => {
     return () => {};
   }, []);
 
-  return <>{isLoading ? <Loader /> : <Messages />}</>;
+  return <>{isLoading ? <Loader /> : <Messenger />}</>;
 };
 
 export default App;

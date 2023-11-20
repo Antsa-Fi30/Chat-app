@@ -12,7 +12,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import galaxy from "../assets/img/19.jpg";
 // import Logo from "../../assets/img/ispm.png";
 import { useNavigate } from "react-router-dom";
-import ButtonGroup from '@mui/material/ButtonGroup'
 
 function Copyright(props) {
   return (
@@ -20,13 +19,11 @@ function Copyright(props) {
       variant="body2"
       color="text.secondary"
       align="center"
-      {...props}
-    >
+      {...props}>
       {"Copyright © "}
       <Link
         color="inherit"
-        href="#"
-      >
+        href="#">
         Stars
       </Link>{" "}
       {new Date().getFullYear()}
@@ -77,8 +74,7 @@ export default function Connexion() {
       <Grid
         container
         component="main"
-        sx={{ height: "100vh" }}
-      >
+        sx={{ height: "100vh" }}>
         <CssBaseline />
         <Grid
           item
@@ -104,8 +100,7 @@ export default function Connexion() {
           md={5}
           component={Paper}
           elevation={6}
-          square
-        >
+          square>
           <Box
             sx={{
               my: 8,
@@ -113,24 +108,21 @@ export default function Connexion() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-            }}
-          >
+            }}>
             {/* <img
               src={Logo}
               alt="Logo"
             /> */}
             <Typography
               component="h1"
-              variant="h5"
-            >
+              variant="h5">
               Connexion
             </Typography>
             <Box
               component="form"
               Validate
               onSubmit={handleSubmit}
-              sx={{ mt: 2 }}
-            >
+              sx={{ mt: 2 }}>
               <TextField
                 margin="normal"
                 required
@@ -164,27 +156,23 @@ export default function Connexion() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
+                sx={{ mt: 3, mb: 2 }}>
                 Connecter
               </Button>
               <Grid container>
                 <Grid
                   item
-                  xs
-                >
+                  xs>
                   <Link
                     href="#"
-                    variant="body2"
-                  >
+                    variant="body2">
                     Mot de passe oublié?
                   </Link>
                 </Grid>
                 <Grid item>
                   <Link
                     href="/inscription"
-                    variant="body2"
-                  >
+                    variant="body2">
                     {"Vous n'avez pas de compte ? Créez-en un"}
                   </Link>
                 </Grid>
