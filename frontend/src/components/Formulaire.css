@@ -6,6 +6,7 @@
 .text-area {
     border: none;
     border-radius: 20px;
+    padding: 12px;
     outline: none;
-    text-align: center;
+    text-align: start;
 }

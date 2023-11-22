@@ -1,11 +1,71 @@
 import { useState } from "react";
+import "./Messages.css";
+import { Avatar } from "@mui/material";
+const Messages = ({ text }) => {
+  const [isMine, setIsMine] = useState(true);
 
-const Messages = () => {
-  const [isMine, setIsMine] = useState(false);
+  const myMsg = ` Hello World `;
+  const otherMsg = "Hello World ! I'm an IA created with JS";
 
-  const myMsg = "HEllo World";
-
-  return <>{isMine ? <div>Gui</div> : <div>UIG</div>}</>;
+  return (
+    <div className="dialog-box">
+      {!isMine ? (
+        <div className="other-message-container">
+          <Avatar>sd</Avatar>
+          <div className="other-message">{otherMsg}</div>
+        </div>
+      ) : (
+        <div className="my-message-container">
+          <div className="my-message">{myMsg}</div>
+          <Avatar></Avatar>
+        </div>
+      )}
+      <div className="other-message-container">
+        <Avatar>sd</Avatar>
+        <div className="other-message">Lorem ipsum dolor</div>
+      </div>{" "}
+      <div className="other-message-container">
+        <Avatar>sd</Avatar>
+        <div className="other-message">Lorem ipsum dolor</div>
+      </div>{" "}
+      <div className="other-message-container">
+        <Avatar>sd</Avatar>
+        <div className="other-message">Lorem ipsum dolor</div>
+      </div>{" "}
+      <div className="other-message-container">
+        <Avatar>sd</Avatar>
+        <div className="other-message">Lorem ipsum dolor</div>
+      </div>{" "}
+      <div className="other-message-container">
+        <Avatar>sd</Avatar>
+        <div className="other-message">Lorem ipsum dolor</div>
+      </div>{" "}
+      <div className="other-message-container">
+        <Avatar>sd</Avatar>
+        <div className="other-message">Lorem ipsum dolor</div>
+      </div>{" "}
+      <div className="other-message-container">
+        <Avatar>sd</Avatar>
+        <div className="other-message">Lorem ipsum dolor</div>
+      </div>{" "}
+      <div className="other-message-container">
+        <Avatar>sd</Avatar>
+        <div className="other-message">Lorem ipsum dolor</div>
+      </div>{" "}
+      <div className="other-message-container">
+        <Avatar>sd</Avatar>
+        <div className="other-message">Lorem ipsum dolor</div>
+      </div>{" "}
+      <div className="other-message-container">
+        <Avatar>sd</Avatar>
+        <div className="other-message">Lorem ipsum dolor</div>
+      </div>{" "}
+      <div className="other-message-container">
+        <Avatar>sd</Avatar>
+        <div className="other-message">Lorem ipsum dolor</div>
+      </div>
+    </div>
+  );
 };
 
 export default Messages;

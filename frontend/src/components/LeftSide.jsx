@@ -51,12 +51,11 @@ const LeftSide = () => {
     <ThemeProvider theme={Theme}>
       <MainCard
         border={false}
-        sx={{ maxHeighst: "98vh", overflowY: "scroll" }}>
+        sx={{ height: "97vh", maxHeight: "97vh", overflowY: "scroll" }}>
         <Search />
         {/* Divider */}
         <Box sx={{ my: 2.5, borderTop: 2, borderColor: "#DDD" }}></Box>
         {/* <UserList /> */}
-        <UserList />
         <Box sx={{ my: 2.5, borderTop: 2, borderColor: "#DDD" }}></Box>
         Ajouter des amis... Footer
       </MainCard>
