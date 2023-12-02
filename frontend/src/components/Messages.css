@@ -1,5 +1,5 @@
 .my-message {
-    font-size: 16px;
+    font-size: 15px;
     position: relative;
     display: inline-block;
     clear: both;
@@ -8,8 +8,7 @@
     padding: 13px 14px;
     vertical-align: top;
     border-radius: 20px;
-    float: right;
-    color: var(--white);
+    color: #fff;
     background: #f44336;
     align-self: flex-end;
     animation-name: slideFromLeft;
@@ -26,7 +25,7 @@
 
 
 .other-message {
-    font-size: 16px;
+    font-size: 15px;
     position: relative;
     display: inline-block;
     clear: both;
@@ -36,7 +35,6 @@
     vertical-align: top;
     border-radius: 20px;
     float: left;
-    color: var(--black);
     background-color: #e6ecec;
     align-self: flex-end;
 
@@ -56,6 +54,5 @@
     position: relative;
     overflow-y: scroll;
     word-wrap: normal;
-
     flex-direction: column;
 }

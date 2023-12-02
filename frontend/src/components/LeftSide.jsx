@@ -6,7 +6,7 @@ import {
   OutlinedInput,
 } from "@mui/material";
 
-import { SearchRounded } from "@mui/icons-material";
+import { BorderBottom, SearchRounded } from "@mui/icons-material";
 import Theme from "../Theme";
 import MainCard from "./MainCard";
 
@@ -51,12 +51,24 @@ const LeftSide = () => {
     <ThemeProvider theme={Theme}>
       <MainCard
         border={false}
-        sx={{ height: "97vh", maxHeight: "97vh", overflowY: "scroll" }}>
+        sx={{ height: "98vh", maxHeight: "98vh", overflowY: "scroll" }}>
         <Search />
         {/* Divider */}
         <Box sx={{ my: 2.5, borderTop: 2, borderColor: "#DDD" }}></Box>
-        {/* <UserList /> */}
-        <Box sx={{ my: 2.5, borderTop: 2, borderColor: "#DDD" }}></Box>
+        <span>User online</span>
+        <Box
+          sx={{
+            height: "55vh",
+            maxHeight: "55vh",
+            overflowY: "scroll",
+            my: 2.5,
+            paddingY: 2.5,
+            borderTop: 2,
+            borderBottom: 2,
+            borderColor: "#DDD",
+          }}>
+          <UserList />
+        </Box>
         Ajouter des amis... Footer
       </MainCard>
     </ThemeProvider>

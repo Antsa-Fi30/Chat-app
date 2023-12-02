@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Link from "@mui/material/Link";
@@ -6,8 +7,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { NavLink } from "react-router-dom";
-import galaxy from "../assets/img/20.jpg";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/Inscription.css";
 
 function Copyright(props) {
@@ -50,13 +50,26 @@ const defaultTheme = createTheme({
 });
 
 export default function Inscription() {
+  const Inscrire = useRef(null);
+  const redirect = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
+    console.log(Inscrire.current);
+    const data = new FormData(Inscrire.current);
+    const formsValue = {
+      pseudo: data.get("username"),
       email: data.get("email"),
       password: data.get("password"),
-    });
+    };
+    localStorage.setItem(
+      formsValue.pseudo,
+      formsValue.email,
+      formsValue.password
+    );
+
+    console.log(localStorage.getItem(formsValue.pseudo));
+
+    redirect("/");
   };
 
   return (
@@ -85,38 +98,12 @@ export default function Inscription() {
           <Box
             component="form"
             noValidate
+            ref={Inscrire}
             onSubmit={handleSubmit}
             sx={{ mt: 3 }}>
             <Grid
               container
               spacing={2}>
-              <Grid
-                item
-                xs={12}
-                sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="Nom"
-                  autoFocus
-                />
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Prenom"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid>
               <Grid
                 item
                 xs={12}>
@@ -174,6 +161,7 @@ export default function Inscription() {
                 type="submit"
                 fullWidth
                 variant="contained"
+                onClick={handleSubmit}
                 sx={{ mt: 3, mb: 2 }}>
                 Enregistrer
               </Button>

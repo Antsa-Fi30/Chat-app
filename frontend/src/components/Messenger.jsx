@@ -34,6 +34,8 @@ export default function Messenger() {
         Component1={<LeftSide />}
         Component2={<RightSide />}
       />
+
+      <Copyright sx={{ padding: "1%" }} />
     </ThemeProvider>
   );
 }
