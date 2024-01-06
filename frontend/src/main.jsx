@@ -3,17 +3,16 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
-import Connexion from "./components/Connexion.jsx";
-import Inscription from "./components/Inscription.jsx";
-import NotFound from "./components/NotFound.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
+
 
 const Root = () => (
   <BrowserRouter>
     <Routes>
-      <Route exact path="/" element={<Connexion/>} />
-      <Route path="/app" element={<App/>} />
-      <Route path="/inscription" element={<Inscription/>} />
-      <Route path="*" element={<NotFound/>} />
+      <Route path="/" element={<Login />} /> 
+      <Route path="/register" element={<Register />} /> 
+      <Route path="/messenger" element={<App/>} /> 
     </Routes>
   </BrowserRouter>
 );
